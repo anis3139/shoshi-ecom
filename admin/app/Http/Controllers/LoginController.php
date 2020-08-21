@@ -19,7 +19,7 @@ class LoginController extends Controller
     function onLogin(Request $request){
        $user= $request->input('user');
        $pass= $request->input('pass');
-       $countValue=AdminModel::where('username','=',$user)->where('password','=',$pass)->count();
+       $countValue=AdminModel::where('username','=',$user)->where('password','=',md5($pass))->count();
 
         if($countValue==1){
             // session(['user' => $user]);

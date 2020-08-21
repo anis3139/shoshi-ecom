@@ -134,3 +134,15 @@ Route::get('/logout', 'LoginController@onLogout');
 Route::get('/Photo', 'PhotoController@PhotoIndex')->middleware('loginCheck');
 Route::post('/imageup', 'PhotoController@uploadImage')->middleware('loginCheck');
 Route::get('/PhotoJSON', 'PhotoController@PhotoJSON')->middleware('loginCheck');
+
+
+
+
+
+// Admin Photo Gallery
+Route::get('/admin', 'AdminController@AdminIndex')->middleware('loginCheck');
+Route::post('/addAdmin', 'AdminController@AdminAdd')->middleware('loginCheck');
+Route::get('/getAdmindata', 'AdminController@AdminData')->middleware('loginCheck');
+Route::post('/Admindelete', 'AdminController@AdminDelete')->middleware('loginCheck');
+Route::post('/Admindetails', 'AdminController@AdminDetailEdit')->middleware('loginCheck');
+Route::post('/Adminupdate', 'AdminController@AdminUpdate')->middleware('loginCheck');
